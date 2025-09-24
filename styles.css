@@ -1,0 +1,374 @@
+/* 1) Local fonts registreren */
+@font-face {
+  font-family: "Ethereal";
+  src: url("/fonts/EtherealDemo-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ethereal";
+  src: url("/fonts/EtherealDemo-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Base */
+:root {
+  --bg: #FFFBF4;
+  --ink: #565446;
+  --ink-soft: #565446;
+  --card: #DBD0BA;
+  --accent: #007BFF;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ---------------- NAV ---------------- */
+nav {
+  background-color: rgba(255, 251, 244, 0.9); 
+  backdrop-filter: blur(100px);
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* beter dan vaste gap */
+  padding: 8px 20px;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.links {
+  display: flex;
+  gap: clamp(16px, 3vw, 50px);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.links a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.links a:hover {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ---------------- HEADER ---------------- */
+header {
+  text-align: center;
+  padding: 325px 20px;
+  background: linear-gradient(to bottom, var(--bg), var(--card));
+  color: var(--ink-soft);
+  position: relative;
+}
+
+.liltitle {
+  animation: fall 2s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-500px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+header h1 {
+  animation: header 3s ease forwards;
+  font-family: "Ethereal", "Montserrat", sans-serif;
+  font-size: clamp(2rem, 6vw, 100px);
+  margin: 0px 20px;
+  color: var(--ink);
+}
+
+@keyframes header {
+  0% {
+    transform: translateY(-500px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+header p {
+  font-size: 1.2rem;
+  margin: 10px 0 0;
+}
+
+header .strepkes {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  max-width: 1300px; 
+}
+
+/* ---------------- SECTIONS ---------------- */
+section {
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-family: "Ethereal", "Montserrat", sans-serif;
+  font-size: 2rem;
+  margin: 0 0 20px;
+  text-align: center;
+  color: var(--ink-soft);
+}
+
+/* ---------------- ABOUT ---------------- */
+#about {
+  padding: 160px 20px 100px; /* ruimte onder nav */
+}
+
+#about h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-block {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 48px);
+  max-width: 1100px;
+  margin: 0 auto 60px;
+}
+
+.about-text {
+  flex: 1;
+  color: var(--ink);
+  text-align: left;
+}
+
+.about-text p {
+  margin: 0 0 1rem;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* ---------------- SKILLS ---------------- */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  justify-content: center;
+  max-width: 800px;
+}
+
+.skills li {
+  padding: 10px 14px;
+  border: 1px solid var(--card);
+  border-radius: 8px;
+  background-color: var(--ink-soft);
+  color: var(--card);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  white-space: nowrap;
+}
+
+/* ---------------- PROJECTS CAROUSEL ---------------- */
+.carousel {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 10px 4px 10px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel::-webkit-scrollbar {
+  height: 8px;
+}
+.carousel::-webkit-scrollbar-thumb {
+  background: #c7bda9;
+  border-radius: 8px;
+}
+.carousel::-webkit-scrollbar-track {
+  background: #efe9de;
+}
+
+.project {
+  flex: 0 0 auto;
+  width: 400px;
+  min-height: 300px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  padding: 20px;
+  text-align: left;
+  position: relative;
+}
+
+/* overlay voor leesbaarheid */
+.project::before {
+  pointer-events: none; 
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 0;
+}
+
+.project .project-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.project h3 {
+  padding-top: 200px;
+  font-size: 1.25rem;
+}
+
+.project p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Specifieke afbeeldingen per kaart */
+.project-1 { background-image: url('images/webflow.jpg'); }
+.project-2 { background-image: url('images/app.png'); }
+.project-3 { background-image: url('images/nailshop.png'); }
+.project-4 { background-image: url('images/foodkiosk.jpeg'); }
+
+/* ---------------- LINKS ---------------- */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* ---------------- FOOTER ---------------- */
+footer {
+  text-align: center;
+  padding: 24px 20px;
+  background-color: var(--card);
+  color: var(--ink-soft);
+  margin-top: 50px;
+}
+
+/* --- Project cards wrapper --- */
+.project-card {
+  flex: 0 0 auto;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Zorg dat de carousel hoogte zich kan aanpassen aan open details */
+.carousel { align-items: flex-start; }
+
+/* Maak tiles duidelijk klikbaar */
+.project-toggle { cursor: pointer; }
+
+/* --- Details panel (collapsed by default) --- */
+.project-details {
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid var(--card);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  margin-top: 10px;
+  padding: 16px 18px;
+
+  /* animatie: we animeren max-height en opacity */
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease,
+    transform 0.35s ease;
+}
+
+.project-details h4 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+
+/* --- Open state (JS zet inline max-height) --- */
+.project-card.is-open .project-details {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive breedtes gelijk houden met je bestaande regels */
+@media (max-width: 800px) {
+  .project-card {
+    width: 240px;
+  }
+}
+
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 900px) {
+  .about-block,
+  .about-block.reverse {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .about-image img {
+    max-width: 320px;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (max-width: 800px) {
+  .carousel {
+    gap: 16px;
+  }
+  .project {
+    width: 240px;
+    min-height: 200px;
+  }
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mijn Portfolio – Alitha Pauwels</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+   <nav>
+      <img class="logo" src="images/logo.png" alt="logo">
+   <div class="links">
+      <a href="#">About Me</a>
+      <a href="#">Projects</a>
+      <a href="">Contact</a>
+    </div>
+  </nav>
+  <header>
+    <h1>Alitha's portfolio</h1>
+    <p class="liltitle">UX/UI Design</p>
+    <img src="images/strepkes.svg" alt="strepkes" class="strepkes">
+  
+  </header>
+
+  <main>
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">Over Mij</h2>
+    
+      <!-- Eerste blok: tekst links, foto rechts -->
+      <div class="about-block">
+        <div class="about-text">
+          <p>
+            Hallo! Ik ben een gepassioneerde ontwikkelaar met een liefde voor het bouwen van moderne
+            en gebruiksvriendelijke websites. Mijn focus ligt op het creëren van oplossingen die zowel
+            functioneel als esthetisch aantrekkelijk zijn.
+          </p>
+          <p>
+            In mijn vrije tijd experimenteer ik graag met nieuwe technologieën en werk ik aan persoonlijke
+            projecten om mijn vaardigheden te verbeteren.
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="images/profile.jpeg" alt="Profielfoto van Alitha" />
+        </div>
+      </div>
+    
+    </section>
+    
+
+    <!-- SKILLS -->
+    <section id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills</h2>
+      <ul class="skills">
+        <li>PHP</li>
+        <li>CSS</li>
+        <li>HTML</li>
+        <li>JavaScript</li>
+        <li>Webflow</li>
+        <li>React</li>
+        <li>Figma</li>
+        <li>Adobe Illustrator</li>
+        <li>Blender</li>
+   
+      </ul>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projecten</h2>
+    
+      <div class="carousel" role="list">
+        <!-- Kaart 1 -->
+        <div class="project-card" role="listitem">
+          <article class="project project-1 project-toggle"
+            role="button"
+            tabindex="0"
+            aria-expanded="false"
+            aria-controls="details-1">
+            <div class="project-content">
+              <h3>Interieur website</h3>
+              <p>Korte beschrijving van het project.</p>
+            </div>
+          </article>
+          <div class="project-details" id="details-1" hidden>
+            <h4>Uitgebreide Uitleg</h4>
+            <p>Hier komt een gedetailleerde beschrijving van het project, inclusief de uitdagingen en gebruikte technologieën.</p>
+            <a href="https://alitha-pauwels---mobile-development.webflow.io" target="_blank" rel="noopener">bekijk mijn werkskeuuu</a>
+          </div>
+        </div>
+    
+        <!-- Kaart 2 -->
+        <div class="project-card" role="listitem">
+          <article class="project project-2 project-toggle"
+            role="button"
+            tabindex="0"
+            aria-expanded="false"
+            aria-controls="details-2">
+            <div class="project-content">
+              <h3>Interieur app</h3>
+              <p>Korte beschrijving van het project.</p>
+            </div>
+          </article>
+          <div class="project-details" id="details-2" hidden>
+            <h4>Uitgebreide Uitleg</h4>
+            <p>Meer info over de app, je rol en de stack.</p>
+            <a href="https://jouw-link-2.example" target="_blank" rel="noopener">Bekijk meer</a>
+          </div>
+        </div>
+    
+        <!-- Kaart 3 -->
+        <div class="project-card" role="listitem">
+          <article class="project project-3 project-toggle"
+            role="button"
+            tabindex="0"
+            aria-expanded="false"
+            aria-controls="details-3">
+            <div class="project-content">
+              <h3>Webshop</h3>
+              <p>Korte beschrijving van het project.</p>
+            </div>
+          </article>
+          <div class="project-details" id="details-3" hidden>
+            <h4>Uitgebreide Uitleg</h4>
+            <p>Wat verkoopt de shop, hoe werkt de checkout, etc.</p>
+            <a href="https://jouw-link-3.example" target="_blank" rel="noopener">Bekijk meer</a>
+          </div>
+        </div>
+    
+        <!-- Kaart 4 -->
+        <div class="project-card" role="listitem">
+          <article class="project project-4 project-toggle"
+            role="button"
+            tabindex="0"
+            aria-expanded="false"
+            aria-controls="details-4">
+            <div class="project-content">
+              <h3>3D Design: Foodkiosk</h3>
+              <p>Korte beschrijving van het project.</p>
+            </div>
+          </article>
+          <div class="project-details" id="details-4" hidden>
+            <h4>Uitgebreide Uitleg</h4>
+            <p>Proces, renders, en gebruikte software (Blender, etc.).</p>
+            <a href="https://jouw-link-4.example" target="_blank" rel="noopener">Bekijk meer</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p>Email: <a href="mailto:jouwnaam@example.com">alitha1.pauwels@gmail.com</a></p>
+      <p>LinkedIn: <a href="#" rel="noopener">https://www.linkedin.com/in/alitha-p-b6b2ab352/</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Alitha Pauwels. Alle rechten voorbehouden.</p>
+  </footer>
+
+  <!-- JS -->
+<!-- laadt uit /scripts/script.js -->
+<script src="./scripts/script.js"></script>
+
+</body>
+</html>
