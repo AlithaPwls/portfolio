@@ -179,14 +179,62 @@ h2 {
   justify-content: center;
 }
 
-.about-image img {
+.about-slider {
+  position: relative;
   width: 100%;
   max-width: 420px;
   aspect-ratio: 4 / 5;
-  object-fit: cover;
   border-radius: 12px;
+  overflow: hidden;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
+
+/* alle slides boven elkaar, volledig passend */
+.about-slider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fadeCycle 20s infinite ease-in-out;
+}
+
+/* Toon 1 slide tegelijk, met delays per afbeelding */
+.about-slider img:nth-child(1) { animation-delay: 0s; }
+.about-slider img:nth-child(2) { animation-delay: 2s; }
+.about-slider img:nth-child(3) { animation-delay: 4s; }
+.about-slider img:nth-child(4) { animation-delay: 8s; }
+.about-slider img:nth-child(5) { animation-delay: 10s; } /* alleen als je er 5 hebt */
+
+/* 5 beelden → totale duur 20s (4s per beeld). 
+   Heb je 4 beelden? Laat nth-child(5) weg en zet de totalen op 16s (zie opmerking onderaan). */
+@keyframes fadeCycle {
+  /* onzichtbaar → fade in → zichtbaar → fade out → onzichtbaar */
+  0%   { opacity: 0; }
+  5%   { opacity: 1; }
+  25%  { opacity: 1; }
+  30%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Respect voor gebruikers die animaties willen beperken */
+@media (prefers-reduced-motion: reduce) {
+  .about-slider img {
+    animation: none;
+    opacity: 1;
+  }
+  .about-slider img:not(:first-child) { display: none; }
+}
+
+/* Mobile variant die je al had */
+@media (max-width: 900px) {
+  .about-slider {
+    max-width: 320px;
+    aspect-ratio: 1 / 1; /* vierkant op mobiel, mag je weghalen als je 4:5 wil houden */
+  }
+}
+
 
 /* ---------------- SKILLS ---------------- */
 .skills {
