@@ -10,6 +10,15 @@ window.addEventListener("load", () => {
   }
 });
 
+// Sluit alle panels bij pageload (vangt oude HTML/caching/reset CSS op)
+document.querySelectorAll('.project-card').forEach((card) => {
+  const panel = card.querySelector('.project-details');
+  if (!panel) return;
+  panel.hidden = true;            // dicht
+  panel.style.maxHeight = '0px';  // startwaarde voor animatie
+  card.classList.remove('is-open');
+});
+
 // --- Helpers voor open/dicht ---
 function closeCard(card) {
   const tile = card.querySelector('.project-toggle');
