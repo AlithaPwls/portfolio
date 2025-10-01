@@ -199,15 +199,14 @@ h2 {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  animation: fadeCycle 20s infinite ease-in-out;
-}
+  animation: fadeCycle 9s infinite;
+  animation-timing-function: ease-in-out;}
 
 /* Toon 1 slide tegelijk, met delays per afbeelding */
 .about-slider img:nth-child(1) { animation-delay: 0s; }
-.about-slider img:nth-child(2) { animation-delay: 2s; }
-.about-slider img:nth-child(3) { animation-delay: 4s; }
-.about-slider img:nth-child(4) { animation-delay: 8s; }
-.about-slider img:nth-child(5) { animation-delay: 10s; } /* alleen als je er 5 hebt */
+.about-slider img:nth-child(2) { animation-delay: 3s; }
+.about-slider img:nth-child(3) { animation-delay: 6s; }
+.about-slider img:nth-child(4) { animation-delay: 9s; }
 
 /* 5 beelden → totale duur 20s (4s per beeld). 
    Heb je 4 beelden? Laat nth-child(5) weg en zet de totalen op 16s (zie opmerking onderaan). */
@@ -216,8 +215,8 @@ h2 {
   0%   { opacity: 0; }
   5%   { opacity: 1; }
   25%  { opacity: 1; }
-  30%  { opacity: 0; }
-  100% { opacity: 0; }
+  30%  { opacity: 1; }
+  100% { opacity: 1; }
 }
 
 /* Respect voor gebruikers die animaties willen beperken */
