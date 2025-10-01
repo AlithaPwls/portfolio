@@ -2,7 +2,7 @@ version: 1
 production:
   deploy:
     from: .
-    to: www
+    to: web
     exclude:
       - .git
       - node_modules
