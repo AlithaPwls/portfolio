@@ -1,0 +1,9 @@
+version: 1
+production:
+  deploy:
+    from: .
+    to: www
+    exclude:
+      - .git
+      - node_modules
+      - .DS_Store
