@@ -390,6 +390,20 @@ footer {
   transform: translateY(0);
 }
 
+
+
+/* Responsive adjustments for mockups */
+@media (max-width: 600px) {
+  .mockup-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mockup {
+    max-width: 90%;
+  }
+}
+
 /* Responsive breedtes gelijk houden met je bestaande regels */
 @media (max-width: 800px) {
   .project-card {
